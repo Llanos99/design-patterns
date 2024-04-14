@@ -1,0 +1,20 @@
+What does this DP do?
+
+- This DP is used to create instances of objects easier without large constructors.
+- The DP remove the logic related to object construction from client code.
+
+Use cases:
+
+- v1 is used when there's a inheritance hierarchy for final product. v2 is used when there's no inheritance at all.
+- If there's a lot of arguments for a constructor then the builder pattern is the way to go.
+
+Real examples:
+
+- StringBuilder uses the builder DP.
+- Calendar class implements builder DP.
+- Lombok library provides @Builder annotation to create objects using builder DP.
+
+Pitfalls:
+
+- Kinda complex for new programmers because of the method chaining where builder methods return builder objects itself.
+- Possibility of partially initialized object. User can set only few or none of the properties, in the case some required properties are missing, build some default values or throw exception.
