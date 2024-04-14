@@ -1,0 +1,19 @@
+What does this DP do?
+
+- Whenever you need to create a complex object that is costly to create, this DP can create a prototype of the object to reduce creation costs for future objects.
+  This DP allows us to make copies of existing object and save us from having to recreate objects from scratch. The class must implement Cloneable interface and
+  the method clone() should declare CloneNotSupportedException in throws to give subclasses chance to decide on whether to support cloning.
+
+Use cases:
+
+-
+
+Real examples:
+
+- The clone() method is an example of a prototype.
+
+Pitfalls:
+
+- An object where state comprises a large number of mutable objects is complicated to clone.
+- In Java the default clone operation will only perform the shallow copy so if you need a deep copy you have to implement it.
+- Subclasses may not be able to support clone and so the code becomes complicated as you have to code for situations where an implementation may not support clone.
