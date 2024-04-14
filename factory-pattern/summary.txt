@@ -1,0 +1,16 @@
+What does this DP do?
+
+- This simple DP moves the instantiation logic to a separate class.
+
+Use cases:
+
+- Typically this DP is used when there's more than one object that can be created, a simple logic (simple criteria) is used to choose the correct class.
+- Simple factory itself doesn't need any state tracking so, it's best to keep this as a static method.
+
+Real examples:
+
+- The Java NumberFormat class has getInstance method which is an example of simple factory.
+
+Pitfalls:
+
+- The criteria used by simple factory to decide which object to instantiate can get more complex over time. In this case it's better to use factory method DP.
