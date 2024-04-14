@@ -1,0 +1,19 @@
+What does this DP do?
+
+- This DP move the object creation logic from our code to a separate class. The factory method let subclasses decide which object to instantiate by overriding the factory method.
+
+Use cases:
+
+- We want to use this pattern when we don't know in advance which class we may need to instantiate beforehand and also to allow new classes to be added to system
+  and handle their creation without affecting client code.
+- Factory method pattern uses inheritance to allow creation of objects of specific child classes, different to simple factory pattern.
+
+Real examples:
+
+- The AbstractCollection class has the iterator() method, this is an example of factory method.
+
+Pitfalls:
+
+- More complex to implement. More classes are involved and need unit testing.
+- It's not easy to refactor existing code into factory method pattern.
+- Sometimes this pattern forces you to subclass (create subclasses) just to create appropriate instance, resulting in a large number of classes which need unit testing.
