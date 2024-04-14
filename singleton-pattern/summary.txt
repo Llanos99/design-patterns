@@ -1,0 +1,20 @@
+What does this DP do?
+
+-A singleton class has only one instance (one single class is ever created), accessible globally through a single point, it could be method or field.
+- A singleton creation does not need any parameters, in that case use factory pattern instead.
+
+Use cases:
+
+- EagerInitialization is the most common one. In case of a Lazy implementation the InitializationHolder is the way to go.
+- You should try to implement this DP when you need to have control of your class, is like having a single point of failure.
+
+Real examples:
+
+- Runtime class actually implements Eager singleton initialization.
+- Spring framework treats all beans by default as singletons. Spring handles the instantiation.
+
+Pitfalls:
+
+- Singleton pattern can deceive you about true dependencies in your code since they are globally accessible is easy to miss dependencies.
+- Hard do unit test.
+- Avoid carrying large amount of mutable global states (data/methods tha can change globally), this is an indicator of a bad singleton pattern use.
