@@ -5,7 +5,7 @@ What does this DP do?
 
 Use cases:
 
-- v1 is used when there's a inheritance hierarchy for final product. v2 is used when there's no inheritance at all.
+- v1 is used when there's an inheritance hierarchy for final product. v2 is used when there's no inheritance at all.
 - If there's a lot of arguments for a constructor then the builder pattern is the way to go.
 
 Real examples:
