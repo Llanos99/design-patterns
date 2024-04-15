@@ -14,6 +14,7 @@
       <module fileurl="file://$PROJECT_DIR$/prototype-pattern/prototype-pattern.iml" filepath="$PROJECT_DIR$/prototype-pattern/prototype-pattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/proxy-pattern/proxy-pattern.iml" filepath="$PROJECT_DIR$/proxy-pattern/proxy-pattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/singleton-pattern/singleton-pattern.iml" filepath="$PROJECT_DIR$/singleton-pattern/singleton-pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/visitor-pattern/visitor-pattern.iml" filepath="$PROJECT_DIR$/visitor-pattern/visitor-pattern.iml" />
     </modules>
   </component>
 </project>
