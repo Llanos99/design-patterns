@@ -1,0 +1,34 @@
+What does this DP do?
+
+- This DP can notify multiple objects whenever an object changes state. This is a pub/sub pattern.
+- This DP implements a one-to-many dependency between objects where many objects are listening for state change
+  of a single object, without tightly coupling all of them together.
+
+Implementation :
+
+- Define an interface for observer, this interface defines a method that is used by subjects to notify about state change.
+- Subjects can be an interface if we are expecting our observers to listen to multiple objects or else subject can be any concrete class.
+- Implementing subject means taking care of handling attach, detach of observer, notifying all registered observers and providing methods
+  to provide state information requested by observers.
+- Concrete observers use a reference passed to them to call "subject" for getting more information about the state. If we are passing
+  changed stated in notify method then this is not required.
+- To reduce number of notifications sent on each state update, we can also have observers register for a specific property or event. This improves
+  performance as on an event, subject notifies only the interested observers instead of all registered observers.
+
+Use cases :
+
+- Useful when there's one-to-many relationship, and we are interested in changes about the one entity.
+
+Real examples :
+
+- Java util Observer interface and Java util Observable class are examples of observers.
+- Listener on Java Servlet application are common examples of observers.
+
+Pitfalls :
+
+- Be careful with infinite circular-update-loop.
+- Performance can become an issue if number of observers are higher and if one or many of them need noticeable time to process notification.
+  This can also cause a pile up of pending notifications or missed notifications.
+- Every setter method triggering updates may be too much if we have client setting properties one after another on our observable.
+- Each update becomes expensive as number of observers increase, and we have one or more "slow" observers in the list.
+- If observers call back the subject to find what changed then this can add up to quite a bit of overhead.
