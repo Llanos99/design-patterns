@@ -1,0 +1,26 @@
+What does this DP do?
+
+- This DP encapsulates how a set of objects interact with each other. Due to this encapsulation there is a loose coupling between the interacting objects.
+- This DP basically acts as the mediator for communication between objects.
+- The benefits of this DP is that the interaction can now change without needing modifications to participant objects. Changing the mediator allows
+  to add/remove participants in an interaction. Mediator know all about the participants, participants only know about mediator.
+
+Implementation :
+
+- Mediators define a generic method which is called by other objects.
+- This method typically needs to know which object changed and optionally the exact property which has changed in that object.
+- We implement this method in which we notify rest of the objects about the state change.
+- Depending on implementation you may need to handle the infinite loop of change-notify-change which can result if object's value change handler is called
+  for every value change whether from an external source as well as mediator.
+
+Use cases :
+
+-
+
+Real examples :
+
+-
+
+Pitfalls :
+
+-
