@@ -1,0 +1,27 @@
+What does this DP do?
+
+- This DP reduces coupling when handling a request. Chain of responsibility gives more than one object with chances to process an incoming request.
+- Objects are chained together by one knowing reference of object which is next in chain. We give request to the first object in chain, if it can't
+  handle that it simply passes the request down the chain.
+
+Implementation :
+
+- Handler must define a method to accept incoming request
+- Handle can define a method to access successor in chain.
+- Implement one or more concrete handlers. Concrete handlers should check if it can handle the request. If not then it should pass request to next handler.
+- We have to create our chain of objects next. In real world this step is done by some framework by Filters.
+- Handlers can allow the request to propagate even if they handle the request. Example, Servlet filter chains allow request to flow to next filter even if they perform some
+  action on the request.
+
+Use cases :
+
+- When a user action is crucial, and we need to decouple the process.
+
+Real examples :
+
+- Servlet filters for authentication with the doFilter(request, response) method.
+
+Pitfalls:
+
+- There's no guarantee provided in the pattern that a request will be handled. Request can traverse whole chain and fall off at the other end without ever being processed, and we won't know it.
+- It's easy to configure the chain when we are connecting successors.
