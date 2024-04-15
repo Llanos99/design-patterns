@@ -1,0 +1,19 @@
+What does this DP do?
+
+- Facade provides a simple and unified interface to a subsystem. Client can interact just with the facade to get the same results instead of interact
+  with a bunch of interfaces and classes. The facade encapsulates the subsystem clas interactions which otherwise would have been done by client code.
+
+Use cases:
+
+- When you need to add an abstraction layer to keep control of the interfaces/classes of a subsystem.
+- A facade should minimize the complexity of subsystem and provide usable interface.
+- When you need to minimize dependencies. This DP allows you to have a weak coupling between subsystems.
+- Each method in facade class should correspond to a use-case which client code can use.
+
+Real examples:
+
+- The Java class URL implements facade. The class provides a single method, openStream(), which does everything behind scene.
+
+Pitfalls:
+
+- Sometimes overusing can hide improperly designed API.
