@@ -1,0 +1,18 @@
+What does this DP do?
+
+- This DP makes existing code object work with client by adapting the object to client's expected interface. Basically this DP wraps existing object.
+
+Use cases:
+
+- When there's an existing functionality, and we need to extend it to supply the clients interface requirements.
+- Class adapter may not be possible if both target and adaptee are concrete classes. In such cases, use object adapter.
+- Adapts an object to another interface without changing behaviour.
+
+Real examples:
+
+- The InputStreamReader and OutputStreamWriter are examples of object adapters.
+
+Pitfalls:
+
+- How much work the adapter does depend upon the differences between target interface and object being adapted.
+- With class adapter you can create objects that exposes unrelated methods in parts of the code.
