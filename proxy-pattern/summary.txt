@@ -1,0 +1,30 @@
+What does this DP do?
+
+- Proxy acts as an intermediate object that can handle operations. For example,
+    * Remote proxy - Provides a local representation of a remote object.
+    * Virtual proxy - Delays construction of original object until absolutely necessary.
+- Proxy implements the same interface as expected for the real object. It delegates actual functionality to real object. Proxies are
+  either given real object or they create one when needed. Some proxies talk to remote service behind the scene.
+
+Use cases:
+
+- Proxies helps with another layer of communication, leveraging complex transactions to it.
+- Proxy must implement same interface as the real subject.
+- To provide client with proxies is decided by application: Factory or Compose clients code with proxies instance.
+- There are two types of proxies. Static and dynamic ones.
+- Dynamic proxy is useful when you need to trigger a proxy based on some method.
+- Purpose of proxy is to provide features like access control, lazy loading, auditing, etc.
+
+Real examples:
+
+- Hibernate uses a proxy to load collections of value types. If you have a relationship in entity class mapped as a collection, marked as candidate for lazy loading
+  then Hibernate will provide a virtual proxy in its place.
+- Spring uses proxy pattern to provide support for features like transactions, caching and general AOP support.
+
+Pitfalls:
+
+- Java's dynamic proxy only works if your class is implementing one or more interfaces. Proxy is created by implementing these interfaces.
+- If you need proxies for handling multiple responsibilities such as auditing, authentication, etc., for the same instance, then it's better
+  to have a single proxy to handle all these requirements due to the way some proxies created object on their own, it becomes quite difficult
+  to manage them.
+- Proxy patter is complex to understand and to identify in general.
